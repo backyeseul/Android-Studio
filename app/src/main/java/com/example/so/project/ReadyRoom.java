@@ -31,7 +31,7 @@ public class ReadyRoom extends AppCompatActivity {
     private Socket sock;
     private boolean isConnected = false;
     private String addr = "192.168.0.16".trim();
-    private int port = 8017;
+    private int port = 8006;
     private ConnectThread connectThread;
     private ReadyRoomMesgRecv recvThread;
     private MessageHandler mesgHandler;
@@ -62,11 +62,7 @@ public class ReadyRoom extends AppCompatActivity {
         enterbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 sendMesg("P2S_ENTER_ROOM", selectedRoomName);
-
-
-
             }
         });
 
@@ -85,9 +81,7 @@ public class ReadyRoom extends AppCompatActivity {
         roomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 selectedRoomName = roomList.get(position);
-
             }
         });
 
@@ -110,12 +104,9 @@ public class ReadyRoom extends AppCompatActivity {
         int roomNum = Integer.parseInt(parsedStr[1]);
 
         for (int i = 0; i < roomNum; i++) {
-
             roomList.add(parsedStr[2+i]);
         }
         listAdapter.notifyDataSetChanged();
-
-
 
     }
 

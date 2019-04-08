@@ -113,12 +113,9 @@ public class GameReady extends AppCompatActivity {
 
         sendMesg("P2S_SEND_GAME_READY_CHAT", myNumber+" "+mesg);
     }
-
-
     public Socket getSocket(){
         return sock;
     }
-
 
 /*
     class ConnectThread extends Thread{
